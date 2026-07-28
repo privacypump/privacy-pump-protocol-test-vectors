@@ -1,0 +1,10 @@
+{
+  "name": "privacy-pump-protocol-test-vectors",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/conformance.mjs",
+    "policy": "node scripts/policy-scan.mjs"
+  }
+}

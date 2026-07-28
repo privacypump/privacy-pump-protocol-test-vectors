@@ -1,0 +1,73 @@
+[
+  {
+    "schemaVersion": 1,
+    "id": "sha256-proposal-payload-001",
+    "class": "proposal_payload_sha256",
+    "description": "Canonical UTF-8 payload hash for a neutral settings proposal.",
+    "input": {
+      "canonical": "{\"action\":\"UpdateSettings\",\"proposalIndex\":\"7\",\"vault\":\"ExampleVault\"}"
+    },
+    "expected": {
+      "encoding": "utf8",
+      "sha256": "89de61fd454b8a15802f9d3d7df4050a5b10dde747d897a202a13438d193ee8b"
+    },
+    "provenance": "Generated with Node.js SHA-256 and validated by the repository conformance runner."
+  },
+  {
+    "schemaVersion": 1,
+    "id": "account-discriminator-001",
+    "class": "account_discriminator",
+    "description": "Anchor account discriminator for PrivacyPumpPrivateVault.",
+    "input": {
+      "preimage": "account:PrivacyPumpPrivateVault"
+    },
+    "expected": {
+      "sha256PrefixHex": "34ca0e74e9eb6c52"
+    },
+    "provenance": "Generated from the Anchor discriminator rule and validated by the conformance runner."
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fee-cap-001",
+    "class": "fee_cap_arithmetic",
+    "description": "Actual reimbursement equal to the cap is accepted.",
+    "input": {
+      "capLamports": "5000",
+      "actualLamports": "5000"
+    },
+    "expected": {
+      "accepted": true,
+      "excessLamports": "0"
+    },
+    "provenance": "Reviewed against the proposal fee-cap invariant."
+  },
+  {
+    "schemaVersion": 1,
+    "id": "fee-cap-002",
+    "class": "fee_cap_arithmetic",
+    "description": "Actual reimbursement above the cap is rejected.",
+    "input": {
+      "capLamports": "5000",
+      "actualLamports": "5001"
+    },
+    "expected": {
+      "accepted": false,
+      "excessLamports": "1"
+    },
+    "provenance": "Reviewed against the proposal fee-cap invariant."
+  },
+  {
+    "schemaVersion": 1,
+    "id": "signer-version-transition-001",
+    "class": "signer_set_version",
+    "description": "A signer-set change advances the version exactly once.",
+    "input": {
+      "currentVersion": 3,
+      "nextVersion": 4
+    },
+    "expected": {
+      "accepted": true
+    },
+    "provenance": "Reviewed against the signer-set-change monotonic version invariant."
+  }
+]
