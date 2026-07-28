@@ -1,0 +1,15 @@
+{
+  "name": "privacy-pump-protocol-test-vectors",
+  "description": "Cross-language deterministic vectors for Privacy Pump payloads, roots, nullifiers, receipts, fees, and public inputs.",
+  "maturity": "Experimental vector set",
+  "network": "Network-independent deterministic fixtures",
+  "topics": [
+    "privacy-pump",
+    "test-vectors",
+    "cryptography",
+    "solana",
+    "typescript",
+    "rust"
+  ],
+  "visibility": "public-after-verification"
+}
